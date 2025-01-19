@@ -1,0 +1,72 @@
+<!-- Project Made by Recio's Group for PRELIM GROUP RESEARCH PROJECT ITEW2 CLIENT/SERVER SIDE SCRIPTING
+
+Group Members:
+
+Recio, Joaquin Aaron P. - Group Leader/Lead Programmer
+Alvarez, Kian Clark P.
+Cantalejo, Blessreal S.
+Catchuela, John Eric L.
+Dela Cruz, Kim Francis O.
+Del Mundo, Klarenz V.
+Dela Torre, Mark Anthony A.
+Estrella, Prince Rodni T. - Co-Lead Programmer
+Fortin, Cheryll Anne V.
+Rosario, Al-jay C.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RECIO GROUP ITEW2 | Prelim Group Project</title>
+
+        <!-- Linking External CSS File -->
+        <link rel="stylesheet" href="style.css">
+
+        <!-- Linking Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <!-- Adding Favicon Icons -->
+        <link rel="android-chrome" sizes="512x512" href="/assets/favicon_io/android-chrome-512x512.png">
+        <link rel="android-chrome" sizes="192x192" href="/assets/favicon_io/android-chrome-192x192.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_io/favicon-16x16.png">
+        <link rel="icon" type="image/x-icon" href="/assets/favicon_io/favicon.ico">
+        <link rel="manifest" href="/assets/favicon_io/site.webmanifest">
+    </head>
+    <body>
+        <!-- Main Container for the Application Semantically Implemented -->
+        <section class="app-container">
+            <!-- Main Title of the Application -->
+            <h1>Recio's Group Number Operations Simple Web Application</h1>
+            <!-- Input Field for user to enter a number -->
+            <label for="numberInput">Enter a number (1-12 digits): </label>
+            <input type="text" id="numberInput" maxlength="12" placeholder="Enter number here">
+            <!-- Button group for various operations -->
+            <div class="button-group">
+                <button id="countAllDigits">Count All Digits Entered</button>
+                <button id="countEvenDigits">Count Even Digits Entered</button>
+                <button id="countOddDigits">Count Odd Digits Entered</button>
+                <button id="mostOccuringDigits">Most Occurring Digit(s)</button>
+                <button id="findDigit">Find a Digit</button>
+                <button id="clearAll">CLEAR</button>
+            </div>
+
+            <!-- Output Area for displaying results -->
+            <p id="output"></p>
+        </section>
+
+        <!-- Footer with copyright information of the group -->
+        <footer class="copyright">
+            <p>RECIO &copy; 2025 | ITEW2 - Client/Server Side Scripting</p>
+        </footer>
+
+        <!-- Linking External JavaScript File -->
+        <script src="script.js"></script>
+    </body>
+</html>
