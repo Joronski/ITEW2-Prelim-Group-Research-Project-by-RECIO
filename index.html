@@ -42,11 +42,13 @@ Rosario, Al-jay C.
     <body>
         <!-- Main Container for the Application Semantically Implemented -->
         <section class="app-container">
+            <!-- Logo -->
+            <img src="assets/favicon_io/android-chrome-192x192.png" alt="Joron's Group Logo">
             <!-- Main Title of the Application -->
             <h1>Recio's Group Number Operations Simple Web Application</h1>
             <!-- Input Field for user to enter a number -->
             <label for="numberInput">Enter a number (1-12 digits): </label>
-            <input type="text" id="numberInput" maxlength="12" placeholder="Enter number here">
+            <input type="number" id="numberInput" min="1" max="12" placeholder="Enter number here">
             <!-- Button group for various operations -->
             <div class="button-group">
                 <button id="countAllDigits">Count All Digits Entered</button>
