@@ -42,22 +42,31 @@ Rosario, Al-jay C.
     <body>
         <!-- Main Container for the Application Semantically Implemented -->
         <section class="app-container">
+            <!-- Background Overlay for Effects -->
+            <div class="background-overlay"></div>
+
             <!-- Logo -->
             <img src="assets/favicon_io/android-chrome-192x192.png" alt="Joron's Group Logo">
+            
             <!-- Main Title of the Application -->
             <h1>Recio's Group Number Operations Simple Web Application</h1>
-            <!-- Input Field for user to enter a number -->
-            <label for="numberInput">Enter a number (1-12 digits): </label>
-            <input type="number" id="numberInput" min="1" max="12" placeholder="Enter number here">
+
+            <!-- Input Field Container -->
+            <div class="input-container">
+                <label for="numberInput">Enter a number (1-12 digits): </label>
+                <input type="number" id="numberInput" min="1" placeholder="Enter number here" aria-label="Enter a number">
+            </div>
+
             <!-- Button group for various operations -->
-            <div class="button-group">
+            <fieldset class="button-group">
+                <legend>Choose an Operation</legend>
                 <button id="countAllDigits">Count All Digits Entered</button>
                 <button id="countEvenDigits">Count Even Digits Entered</button>
                 <button id="countOddDigits">Count Odd Digits Entered</button>
                 <button id="mostOccuringDigits">Most Occurring Digit(s)</button>
                 <button id="findDigit">Find a Digit</button>
                 <button id="clearAll">CLEAR</button>
-            </div>
+            </fieldset>
 
             <!-- Output Area for displaying results -->
             <p id="output"></p>
@@ -65,8 +74,9 @@ Rosario, Al-jay C.
 
         <!-- Footer with copyright information of the group -->
         <footer class="copyright">
-            <p>RECIO &copy; 2025 | ITEW2 - Client/Server Side Scripting</p>
+            <p><strong>RECIO &copy; 2025</strong> | ITEW2 - Client/Server Side Scripting</p>
         </footer>
+
 
         <!-- Linking External JavaScript File -->
         <script src="script.js"></script>
