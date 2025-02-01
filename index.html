@@ -28,57 +28,49 @@ Rosario, Al-jay C.
         <!-- Linking Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
         <!-- Adding Favicon Icons -->
-        <link rel="android-chrome" sizes="512x512" href="/assets/favicon_io/android-chrome-512x512.png">
-        <link rel="android-chrome" sizes="192x192" href="/assets/favicon_io/android-chrome-192x192.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_io/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_io/favicon-16x16.png">
-        <link rel="icon" type="image/x-icon" href="/assets/favicon_io/favicon.ico">
-        <link rel="manifest" href="/assets/favicon_io/site.webmanifest">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
     </head>
     <body>
-        <!-- Main Container for the Application Semantically Implemented -->
+        <!-- Main Container -->
         <section class="app-container">
-            <!-- Background Overlay for Effects -->
             <div class="background-overlay"></div>
 
             <!-- Logo -->
             <img src="assets/favicon_io/android-chrome-192x192.png" alt="Joron's Group Logo">
             
-            <!-- Main Title of the Application -->
+            <!-- Main Title -->
             <h1>Recio's Group Number Operations Simple Web Application</h1>
 
-            <!-- Input Field Container -->
+            <!-- Input Field -->
             <div class="input-container">
-                <label for="numberInput">Enter a number (1-12 digits): </label>
+                <label for="numberInput">Enter a number (1-12 digits):</label>
                 <input type="number" id="numberInput" min="1" placeholder="Enter number here" aria-label="Enter a number">
             </div>
 
-            <!-- Button group for various operations -->
+            <!-- Button group for operations -->
             <fieldset class="button-group">
                 <legend>Choose an Operation</legend>
-                <button id="countAllDigits">Count All Digits Entered</button>
-                <button id="countEvenDigits">Count Even Digits Entered</button>
-                <button id="countOddDigits">Count Odd Digits Entered</button>
-                <button id="mostOccuringDigits">Most Occurring Digit(s)</button>
-                <button id="findDigit">Find a Digit</button>
-                <button id="clearAll">CLEAR</button>
+                <button onclick="countAllDigits()">Count All Digits</button>
+                <button onclick="countEvenDigits()">Count Even Digits</button>
+                <button onclick="countOddDigits()">Count Odd Digits</button>
+                <button onclick="mostOccurringDigits()">Most Occurring Digit(s)</button>
+                <button onclick="findDigit()">Find a Digit</button>
+                <button onclick="clearAll()">CLEAR</button>
             </fieldset>
 
-            <!-- Output Area for displaying results -->
+            <!-- Output Area -->
             <p id="output"></p>
         </section>
 
-        <!-- Footer with copyright information of the group -->
+        <!-- Footer -->
         <footer class="copyright">
             <p><strong>RECIO &copy; 2025</strong> | ITEW2 - Client/Server Side Scripting</p>
         </footer>
 
-
-        <!-- Linking External JavaScript File -->
+        <!-- Linking External JavaScript -->
         <script src="script.js"></script>
     </body>
 </html>
