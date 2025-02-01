@@ -1,9 +1,28 @@
+/*
+    Project Made by Recio's Group for PRELIM GROUP RESEARCH PROJECT ITEW2 CLIENT/SERVER SIDE SCRIPTING
+
+    Group Members:
+
+    Recio, Joaquin Aaron P. - Group Leader/Lead Programmer
+    Alvarez, Kian Clark P.
+    Cantalejo, Blessreal S.
+    Catchuela, John Eric L.
+    Dela Cruz, Kim Francis O.
+    Del Mundo, Klarenz V.
+    Dela Torre, Mark Anthony A.
+    Estrella, Prince Rodni T. - Co-Lead Programmer
+    Fortin, Cheryll Anne V.
+    Rosario, Al-jay C.
+
+    RECIO's Group © 2025 | ITEW2 - Client/Server Side Scripting
+*/
+
 // Function to get the number input and validate it
 function getNumber() {
     const inputField = document.getElementById("numberInput");
     const num = inputField.value.trim();
 
-    if (!/^\d{1,12}$/.test(num)) {
+    if (isNaN(num) || num.length < 1 || num.length > 12) {
         alert("Please enter a valid number (1 to 12 digits).");
         return null;
     }
@@ -55,18 +74,25 @@ function findDigit() {
     if (!num) return;
 
     const digitToFind = prompt("Enter a digit to find (0-9):");
-    if (!/^\d$/.test(digitToFind)) {
+    if (digitToFind === null || digitToFind.length !== 1 || digitToFind < '0' || digitToFind > '9') {
         alert("Please enter a single digit (0-9).");
         return;
     }
 
-    const count = num.split("").filter(digit => digit === digitToFind).length;
-    document.getElementById("output").innerText = `Digit "${digitToFind}" appears ${count} time(s).`;
+    // Count occurrences of the digit
+    let count = 0;
+    for (let i = 0; i < num.length; i++) {
+        if (num[i] === digitToFind) {
+            count++;
+        }
+    }
+
+    document.getElementById("output").innerText = 'Digit "' + digitToFind + '" appears ' + count + ' time(s).';
 }
 
 // Function to clear all input and output
 function clearAll() {
     document.getElementById("numberInput").value = "";
     document.getElementById("numberInput").focus();
-    document.getElementById("output").innerText = "";
+    document.getElementById("output").innerText = "No following output yet";
 }

@@ -1,3 +1,22 @@
+/*
+    Project Made by Recio's Group for PRELIM GROUP RESEARCH PROJECT ITEW2 CLIENT/SERVER SIDE SCRIPTING
+
+    Group Members:
+
+    Recio, Joaquin Aaron P. - Group Leader/Lead Programmer
+    Alvarez, Kian Clark P.
+    Cantalejo, Blessreal S.
+    Catchuela, John Eric L.
+    Dela Cruz, Kim Francis O.
+    Del Mundo, Klarenz V.
+    Dela Torre, Mark Anthony A.
+    Estrella, Prince Rodni T. - Co-Lead Programmer
+    Fortin, Cheryll Anne V.
+    Rosario, Al-jay C.
+
+    RECIO's Group © 2025 | ITEW2 - Client/Server Side Scripting
+*/
+
 /* WEB3 Palette */
 body {
     font-family: 'Poppins', sans-serif;
@@ -157,6 +176,10 @@ input[type="number"] {
     box-shadow: 0 6px 15px rgba(30, 144, 255, 0.4);
     background: linear-gradient(135deg, #1e90ff, #00ffff);
     cursor: pointer;
+}
+
+.output-group {
+    border-radius: 10px;
 }
 
 #output {
