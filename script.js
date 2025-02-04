@@ -98,10 +98,13 @@ function mostOccurringDigits() {
 
 // Function to find a specific digit
 function findDigit() {
+    // Get the number from the input, then if no number is provided, exit the function
     const num = getNumber();
     if (!num) return;
 
+    // Prompt the user to enter a digit to find
     const digitToFind = prompt("Enter a digit to find (0-9):");
+    // Alert the user if the input is not a single digit and it exits the function if the input is invalid
     if (digitToFind === null || digitToFind.length !== 1 || digitToFind < '0' || digitToFind > '9') {
         alert("Please enter a single digit (0-9).");
         return;
