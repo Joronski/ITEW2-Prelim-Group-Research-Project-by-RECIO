@@ -73,27 +73,40 @@ function countOddDigits() {
 // Function to find the most occurring digit(s)
 function mostOccurringDigits() {
     // Get the number from the input
-    const num = getNumber();
+    let num = parseInt(getNumber());
 
-    // If no number is provided, exit the function
-    if (!num) return;
+    // If no number is provided or it's not valid, exit the function
+    if (isNaN(num)) return;
 
-    // Initialize an object to store the frequency of each digit
-    const frequency = {};
+    let maxFreq = 0;
+    let mostFrequentDigits = ""; // To store the digits with max frequency
 
-    // Counting the frequency of each digit
-    num.split("").forEach(digit => {
-        frequency[digit] = (frequency[digit] || 0) + 1;
-    });
+    // Loop through digits 0 to 9
+    for (let digit = 0; digit <= 9; digit++) {
+        let tempNum = num;
+        let count = 0;
 
-    // Find the maximum frequency
-    const maxFreq = Math.max(...Object.values(frequency));
+        // Count occurrences of the current digit
+        while (tempNum > 0) {
+            let lastDigit = tempNum % 10; // Get the last digit
+            if (lastDigit === digit) {
+                count++;
+            }
+            tempNum = parseInt(tempNum / 10);    // Remove the last digit using parseInt
+        }
 
-    // Find the digits with the maximum frequency
-    const mostFrequentDigits = Object.keys(frequency).filter(digit => frequency[digit] === maxFreq);
+        // Update max frequency and most frequent digits
+        if (count > maxFreq) {
+            maxFreq = count;
+            mostFrequentDigits = digit;          // Replace with the new most frequent digit
+        } else if (count === maxFreq && count > 0) {
+            mostFrequentDigits += " " + digit;   // Add the digit if it matches max frequency
+        }
+    }
 
     // Display the most occurring digit(s) and their frequency
-    document.getElementById("output").innerText = `Most Occurring Digit(s): ${mostFrequentDigits.join(", ")} (appeared ${maxFreq} times)`;
+    document.getElementById("output").innerText = 
+        "Most Occurring Digit(s): " + mostFrequentDigits + " (appeared " + maxFreq + " times)";
 }
 
 // Function to find a specific digit
