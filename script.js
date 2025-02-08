@@ -48,25 +48,41 @@ function countEvenDigits() {
     const num = getNumber();
     if (!num) return;
 
-    // Count the even digits in the number
-    const evenCount = num.split("").filter(digit => digit % 2 === 0).length;
-    
+    let evenCount = 0; 
+    let number = parseInt(num);
+
+    // Count the even digits using arithmetic operations
+    while (number > 0) {
+        let digit = number % 10; // Get the last digit
+        if (digit % 2 === 0) { 
+            evenCount++; // Incrementing if the digit is even
+        }
+        number = Math.floor(number / 10); // Remove the last digit
+    }
+
     // Display the count of even digits in the output element
     document.getElementById("output").innerText = `Even Digits Count: ${evenCount}`;
 }
 
 // Function to count odd digits
 function countOddDigits() {
-    // Get the number from the input
+    // Get the number from the getNumber function
     const num = getNumber();
-
-    // If no number is provided, exit the function
     if (!num) return;
 
-    // Count the odd digits in the number
-    const oddCount = num.split("").filter(digit => digit % 2 !== 0).length;
+    let oddCount = 0; 
+    let number = parseInt(num);
 
-    // Display the count of odd digits
+    // Count the odd digits using arithmetic operations
+    while (number > 0) {
+        let digit = number % 10; // Get the last digit
+        if (digit % 2 !== 0) { 
+            oddCount++; // Incrementing if the digit is odd
+        }
+        number = parseInt(number / 10); // Remove the last digit using parseInt
+    }
+
+    // Display the count of odd digits in the output element
     document.getElementById("output").innerText = `Odd Digits Count: ${oddCount}`;
 }
 
@@ -92,46 +108,62 @@ function mostOccurringDigits() {
             if (lastDigit === digit) {
                 count++;
             }
-            tempNum = parseInt(tempNum / 10);    // Remove the last digit using parseInt
+            tempNum = parseInt(tempNum / 10); // Removing the last digit using parseInt
         }
 
         // Update max frequency and most frequent digits
         if (count > maxFreq) {
             maxFreq = count;
-            mostFrequentDigits = digit;          // Replace with the new most frequent digit
+            mostFrequentDigits = digit; // Replacing with the new most frequent digit
         } else if (count === maxFreq && count > 0) {
-            mostFrequentDigits += " " + digit;   // Add the digit if it matches max frequency
+            mostFrequentDigits += " " + digit; // Adding the digit if it matches max frequency
         }
     }
 
     // Display the most occurring digit(s) and their frequency
-    document.getElementById("output").innerText = 
-        "Most Occurring Digit(s): " + mostFrequentDigits + " (appeared " + maxFreq + " times)";
+    document.getElementById("output").innerText = "Most Occurring Digit(s): " + mostFrequentDigits + " (appeared " + maxFreq + " times)";
 }
 
-// Function to find a specific digit
+// Function to count a specific digit in a number without using arrays or strings
 function findDigit() {
-    // Get the number from the input, then if no number is provided, exit the function
-    const num = getNumber();
-    if (!num) return;
+    // Get the number input
+    let num = getNumber();  // Ensure getNumber() is working properly
+    if (num === null || num === undefined || num === '') {
+        alert("No input received. Please enter a valid number.");
+        return;
+    }
 
-    // Prompt the user to enter a digit to find
-    const digitToFind = prompt("Enter a digit to find (0-9):");
-    // Alert the user if the input is not a single digit and it exits the function if the input is invalid
-    if (digitToFind === null || digitToFind.length !== 1 || digitToFind < '0' || digitToFind > '9') {
+    num = parseInt(num, 10); // Convert to an integer
+
+    // Ensure the input is a valid positive integer
+    if (isNaN(num) || num < 0) {
+        alert("Please enter a valid positive number.");
+        return;
+    }
+
+    // Get the digit to find
+    let digitToFind = parseInt(prompt("Enter a digit to find (0-9):"), 10);
+
+    // Validate that the input is a single digit (0-9)
+    if (isNaN(digitToFind) || digitToFind < 0 || digitToFind > 9) {
         alert("Please enter a single digit (0-9).");
         return;
     }
 
-    // Count occurrences of the digit
+    // Count occurrences using mathematical operations
     let count = 0;
-    for (let i = 0; i < num.length; i++) {
-        if (num[i] === digitToFind) {
+    let tempNum = num;
+
+    while (tempNum > 0) {
+        let lastDigit = tempNum % 10; // Extract last digit
+        if (lastDigit === digitToFind) {
             count++;
         }
+        tempNum = parseInt(tempNum / 10); // Removing last digit using parseInt
     }
 
-    document.getElementById("output").innerText = 'Digit "' + digitToFind + '" appears ' + count + ' time(s).';
+    // Display the result
+    document.getElementById("output").innerText = `Digit "${digitToFind}" appears ${count} time(s) in ${num}.`;
 }
 
 // Function to clear all input and output
