@@ -20,7 +20,7 @@
 // Function to get the number input from the user
 function getNumber() {
     const inputField = document.getElementById("numberInput");
-    const num = inputField.value.trim();
+    const num = inputField.value;
 
     // Validate the input: check if it's a number and within the required length
     if (isNaN(num) || num.length < 1 || num.length > 12) {
