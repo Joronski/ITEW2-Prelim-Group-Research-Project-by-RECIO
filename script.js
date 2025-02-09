@@ -57,7 +57,7 @@ function countEvenDigits() {
         if (digit % 2 === 0) { 
             evenCount++; // Incrementing if the digit is even
         }
-        number = Math.floor(number / 10); // Removing the last digit
+        number = parseInt(number / 10); // Removing the last digit
     }
 
     // Display the count of even digits in the output element
