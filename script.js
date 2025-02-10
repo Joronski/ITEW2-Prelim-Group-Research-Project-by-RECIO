@@ -21,9 +21,10 @@
 function getNumber() {
     const inputField = document.getElementById("numberInput");
     const num = inputField.value;
+    const numcheck = Number(inputField.value);
 
     // Validate the input: check if it's a number and within the required length
-    if (isNaN(num) || num.length < 1 || num.length > 12) {
+    if (isNaN(num) || num.length < 1 || num.length > 12 || numcheck < 0) {
         alert("Please enter a valid number (1 to 12 digits).");
         return null;
     }
@@ -163,7 +164,7 @@ function findDigit() {
     }
 
     // Display the result
-    document.getElementById("output").innerText = `Digit "${digitToFind}" appears ${count} time(s) in ${num}.`;
+    document.getElementById("output").innerText = `Digit "${digitToFind}" appears ${count} time(s) in ${num}`;
 }
 
 // Function to clear all input and output
