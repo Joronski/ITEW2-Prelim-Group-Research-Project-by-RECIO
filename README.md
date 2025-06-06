@@ -17,3 +17,5 @@ Fortin, Cheryll Anne V. <br>
 Rosario, Al-jay C.
 
 Documentation Video: https://youtu.be/L0075M9YuH8?si=SatJhyl2-Y7Yntx-
+
+![Recio's Group - ITEW2 Prelim Group Research Project (Output)](https://github.com/user-attachments/assets/4f055a4d-aa37-4d84-88af-ecb7f4ed3acf)
